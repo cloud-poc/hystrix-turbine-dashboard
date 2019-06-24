@@ -32,9 +32,9 @@ management:
         include: '*'
         
 turbine:
-  aggregator:
-    cluster-config:
-    - default
-  #app-config: api-gateway,catalog-service,inventory-service
+#  aggregator:
+#    cluster-config:
+#    - default
+  app-config: api-gateway,catalog-service,inventory-service
   clusterNameExpression: "'default'"
   
