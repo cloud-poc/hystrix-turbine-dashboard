@@ -29,12 +29,15 @@ management:
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: health,info,bus-refresh,hystrix.stream,prometheus,metrics
+  metrics:
+    export.prometheus.enabled: true
+    tags.application: ${spring.application.name}
         
 turbine:
-#  aggregator:
-#    cluster-config:
-#    - default
+  aggregator:
+    cluster-config:
+    - default
   app-config: api-gateway,catalog-service,inventory-service
   clusterNameExpression: "'default'"
   
